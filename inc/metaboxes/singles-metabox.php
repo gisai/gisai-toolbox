@@ -62,10 +62,12 @@ class Pagina_Metabox {
 		$icono		  = isset( $_POST['icono'] ) ? sanitize_text_field($_POST['icono']) : false;
 		$post				= isset( $_POST['post'] ) ? sanitize_text_field($_POST['post']) : false;
     $posts_por_pagina = isset( $_POST['posts-por-pagina'] ) ? $_POST['posts-por-pagina'] : -1;
+    $financiacion = isset( $_POST['financiacion'] ) ? $_POST['financiacion'] : 'publica';
 
 		update_post_meta( $post_id, 'wpcf-pagina-icono', $icono );
 		update_post_meta( $post_id, 'wpcf-pagina-post', $post);
     update_post_meta( $post_id, 'wpcf-pagina-ppp', $posts_por_pagina);
+    update_post_meta( $post_id, 'wpcf-pagina-financiacion', $financiacion );
 	}
 
 	public function render_meta_box_content( $post ) {
@@ -73,16 +75,20 @@ class Pagina_Metabox {
 
     $posts_por_pagina = get_post_meta( $post->ID, 'wpcf-pagina-ppp', true);
 		$icono 	    = get_post_meta( $post->ID, 'wpcf-pagina-icono', true );
-		$post       = get_post_meta( $post->ID, 'wpcf-pagina-post', true);
+		$post_type       = get_post_meta( $post->ID, 'wpcf-pagina-post', true);
+    $financiacion = get_post_meta( $post->ID, 'wpcf-pagina-financiacion', true );
 
 	?>
 
-		<p><strong><label for="icono"><?php _e( 'Icono de la página', 'gisai_toolbox' ); ?></label></strong></p>
+		<p><strong><label for="icono"><?php _e( 'Icono de la página', 'gisai_toolbox' );?></label></strong></p>
 		<p><input type="text" class="widefat" id="icono" name="icono" value="<?php echo $icono ?>"></p>
 		<p><strong><label for="post"><?php _e( 'Tipo de posts que mostrar', 'gisai_toolbox' ); ?></label></strong></p>
 		<p><em><?php echo __('Para la plantilla "Lista de posts" es necesario escribir aquí el slug del tipo de posts que se mostrarán en la lista (proyectos, patentes, software, colaboraciones, investigaciones, miembros, ofertas)'); ?></em></p>
-		<p><input type="text" class="widefat" id="post" name="post" value="<?php echo $post ?>"></p>
-		<p><strong><label for="posts-por-pagina"><?php _e( 'Número de posts a mostrar en esta página', 'gisai_toolbox' ); ?></label></strong></p>
+		<p><input type="text" class="widefat" id="post" name="post" value="<?php echo $post_type ?>"></p>
+    <p><em><label for="financiacion"><?php _e( "Si se listan proyectos, determinar qué tipo de proyectos se desea mostrar en esta página:", 'sydney_toolbox'); ?></label></em></p>
+    <input type="radio" name="financiacion" value="propia" <?php checked( $financiacion, 'propia' ); ?> >Financiación Propia
+    <input type="radio" name="financiacion" value="publica" <?php checked( $financiacion, 'publica' ); ?> style="margin-left: 20px">Financiación Pública
+    <p><strong><label for="posts-por-pagina"><?php _e( 'Número de posts a mostrar en esta página', 'gisai_toolbox' ); ?></label></strong></p>
 		<p><em><?php echo __('Si el número de posts total de este tipo es mayor que este valor, se aplicará paginación a las entradas'); ?></em></p>
 		<p><input type="text" class="widefat" id="posts-por-pagina" name="posts-por-pagina" value="<?php echo $posts_por_pagina ?>"></p>
 	<?php

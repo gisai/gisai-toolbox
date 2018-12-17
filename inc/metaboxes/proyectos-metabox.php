@@ -128,8 +128,8 @@ class Proyectos_Metabox {
     <p><input type="number" id="presupuesto" name="presupuesto" value="<?php echo $presupuesto; ?>"> €</p>
 
     <p><strong><label for="financiacion"><?php _e( "Tipo de financiación que recibe el proyecto:", 'sydney_toolbox'); ?></label></strong></p>
-    <input type="radio" name="financiacion" value="propia" <?php checked( $financiacion, 'propia' ); ?> >Financiación Propia<br>
-    <input type="radio" name="financiacion" value="publica" <?php checked( $financiacion, 'publica' ); ?> >Financiación Pública<br>
+    <input type="radio" name="financiacion" value="propia" <?php checked( $financiacion, 'propia' ); ?> >Financiación Propia
+    <input type="radio" name="financiacion" value="publica" <?php checked( $financiacion, 'publica' ); ?> style="margin-left: 20px">Financiación Pública
 
     <p><strong><label for="duracion"><?php _e( 'Número total de meses', 'sydney_toolbox' ); ?></label></strong></p>
     <p><input type="number" id="duracion" name="duracion" value="<?php echo $duracion; ?>"></p>
