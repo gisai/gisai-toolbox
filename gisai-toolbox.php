@@ -56,6 +56,7 @@ class GISAI_Custom_Posts {
 		require_once( ST_DIR . 'inc/post-type-software.php' );
 		require_once( ST_DIR . 'inc/post-type-patentes.php' );
 		require_once( ST_DIR . 'inc/post-type-trabajos.php' );
+        require_once( ST_DIR . 'inc/post-type-tecnologias.php' );
 		//Metaboxes
 		require_once( ST_DIR . 'inc/metaboxes/investigaciones-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/miembros-metabox.php' );
@@ -66,6 +67,7 @@ class GISAI_Custom_Posts {
 		require_once( ST_DIR . 'inc/metaboxes/singles-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/ofertas-metabox.php' );
 		require_once( ST_DIR . 'inc/metaboxes/trabajos-metabox.php' );
+        require_once( ST_DIR . 'inc/metaboxes/tecnologias-metabox.php' );
 	}
 
 	/**

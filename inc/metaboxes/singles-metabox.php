@@ -83,7 +83,7 @@ class Pagina_Metabox {
 		<p><strong><label for="icono"><?php _e( 'Icono de la página', 'gisai_toolbox' );?></label></strong></p>
 		<p><input type="text" class="widefat" id="icono" name="icono" value="<?php echo $icono ?>"></p>
 		<p><strong><label for="post"><?php _e( 'Tipo de posts que mostrar', 'gisai_toolbox' ); ?></label></strong></p>
-		<p><em><?php echo __('Para la plantilla "Lista de posts" es necesario escribir aquí el slug del tipo de posts que se mostrarán en la lista (proyectos, patentes, software, colaboraciones, investigaciones, miembros, ofertas)'); ?></em></p>
+		<p><em><?php echo __('Para la plantilla "Lista de posts" es necesario escribir aquí el slug del tipo de posts que se mostrarán en la lista (proyectos, patentes, software, colaboraciones, investigaciones, miembros, ofertas, tecnologías)'); ?></em></p>
 		<p><input type="text" class="widefat" id="post" name="post" value="<?php echo $post_type ?>"></p>
     <p><em><label for="financiacion"><?php _e( "Si se listan proyectos, determinar qué tipo de proyectos se desea mostrar en esta página:", 'sydney_toolbox'); ?></label></em></p>
     <input type="radio" name="financiacion" value="propia" <?php checked( $financiacion, 'propia' ); ?> >Financiación Propia
